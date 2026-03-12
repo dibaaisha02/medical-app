@@ -1,0 +1,25 @@
+{% extends 'layout.html'%}
+{%block title%}
+   {{ Post.title }} 
+{% endblock %}
+
+{% block content %}
+    <section>
+    
+        <img 
+          src="{{ Post.banner.url }}" alt="{{ Post.title }}" 
+           style="width: 250px; height: 400px;"
+           class="banner"
+        />
+        
+        <h1>{{ Post.title }}</h1>
+        <p>{{Post.date}}</p>
+        {% if Post.body%}
+          <p>{{Post.body}}</p>
+        {%endif%}
+        <p><a href="{{ Post.get_absolute_url }}">View all posts</a></p>
+
+    </section>
+    
+{% endblock %}
+  
